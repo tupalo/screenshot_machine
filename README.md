@@ -1,6 +1,8 @@
 # ScreenshotMachine
 
-A gem to create screenshots of webpages by using the ScreenshotMachine.com API. You will need a (free) account on ScreenshotMachine.com to get started.
+A gem to create screenshots of webpages by using the [ScreenshotMachine.com](http://screenshotmachine.com) API.
+
+You will need a (free) account to get started.
 
 ## Installation
 
