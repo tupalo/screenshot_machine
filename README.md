@@ -57,6 +57,11 @@ end
 ScreenshotMachine::Generator.new("http://non-existing-example123.com").screenshot
 # ScreenshotMachine::Exceptions::InvalidUrl: WARNING: Invalid URL
 
+# ScreenshotMachine::Exceptions::InvalidKey
+# Raised when your API key is not set or invalid
+ScreenshotMachine::Generator.new("http://non-existing-example123.com").screenshot
+# ScreenshotMachine::Exceptions::InvalidKey: ERROR: Invalid API KEY
+
 # ScreenshotMachine::Exceptions::NoCredits
 # Raised when there are not sufficient credits in your ScreenshotMachine.com account.
 ScreenshotMachine::Generator.new("http://example.com").screenshot
