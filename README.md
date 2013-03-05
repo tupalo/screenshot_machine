@@ -17,23 +17,32 @@ Or install it yourself as:
     $ gem install screenshot_machine
 
 ## Usage
-    
+
+Using ScreenshotMachine is quite simple
+
+    require 'screenshot_machine'
+
+    ScreenshotMachine.configure do |config|
+      config.key = '012345abcdefg'
+    end
+
     website_url = "http://google.com/?q=great+gem"
     sm = ScreenshotMachine::Generator.new(website_url)
-    # Returns a .read on the file
+    # Returns a binary stream of the file
     sm.screenshot
 
-Generator.new also accepts options:
 
-    ScreenshotMachine::Generator.new(
-      "http://google.com/?q=great+gem",
-      {
-        :size       => "L",     # T, S, E, N, M, L, X, F
-        :format     => "JPG",   # JPG, GIF, PNG
-        :cacheLimit => 14,      # 0-14 in days
-        :timeout    => 200      # 0, 200, 400, 600, 800, 1000 in ms
-      }
-    )
+You can also config all API Parameters
+
+    require 'screenshot_machine'
+
+    ScreenshotMachine.configure do |config|
+      config.key        = '012345abcdefg'
+      config.size       = 'X'
+      config.format     = 'PNG'
+      config.cacheLimit = 2
+      config.timeout    = 400
+    end
 
 ### Exceptions
     
