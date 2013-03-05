@@ -28,10 +28,4 @@ module ScreenshotMachine
         uri.to_s
       end
   end
-
-  module Exceptions
-    class InvalidUrl < StandardError; end
-    class NoCredits < StandardError; end
-  end
-
 end

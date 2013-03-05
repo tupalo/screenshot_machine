@@ -13,6 +13,11 @@ module ScreenshotMachine
     :cacheLimit => 14,      # 0-14 in days
     :timeout    => 200      # 0, 200, 400, 600, 800, 1000 in ms
   }
+
+  module Exceptions
+    class InvalidUrl < StandardError; end
+    class NoCredits < StandardError; end
+  end
 end
 
 require "screenshot_machine/generator"
