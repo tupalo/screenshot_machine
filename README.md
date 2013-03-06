@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tupalo/screenshot_machine.png?branch=master)](https://travis-ci.org/tupalo/screenshot_machine)
+
 # ScreenshotMachine
 
 A gem to create screenshots of webpages by using the [ScreenshotMachine.com](http://screenshotmachine.com) API.
