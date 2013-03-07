@@ -57,12 +57,12 @@ end
 
 ```ruby
 # ScreenshotMachine::Exceptions::InvalidUrl
-# Raised when the website_url can not be resolved by ScreenshotMachine.com
+# Raised when the website_url can not be resolved by ScreenshotMachine.com.
 ScreenshotMachine.new("http://non-existing-example123.com").screenshot
 # ScreenshotMachine::Exceptions::InvalidUrl: WARNING: Invalid URL
 
 # ScreenshotMachine::Exceptions::InvalidKey
-# Raised when your API key is not set or invalid
+# Raised when your API key is not set or invalid.
 ScreenshotMachine.new("http://non-existing-example123.com").screenshot
 # ScreenshotMachine::Exceptions::InvalidKey: ERROR: Invalid API KEY
 
@@ -70,6 +70,11 @@ ScreenshotMachine.new("http://non-existing-example123.com").screenshot
 # Raised when there are not sufficient credits in your ScreenshotMachine.com account.
 ScreenshotMachine.new("http://example.com").screenshot
 # ScreenshotMachine::Exceptions::NoCredits: ERROR: No Credits for API
+
+# ScreenshotMachine::Exceptions::SystemError
+# Raised when the API returns system_error.
+ScreenshotMachine.new("http://example.com").screenshot
+# ScreenshotMachine::Exceptions::SystemError: ERROR: API System Error
 ```
 
 ## Contributing
