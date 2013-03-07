@@ -90,5 +90,16 @@ describe ScreenshotMachine::Generator do
         expect{ generator.screenshot }.to raise_error(ScreenshotMachine::Exceptions::NoCredits)
       end
     end
+
+    context "when screenshotmachine returns a system_error" do
+      it "should raise an exception" do
+        stub_request(:get, /api\.screenshotmachine\.com.*/).
+          to_return(
+            :status => 200,  
+            :headers => { 'x-screenshotmachine-response' => 'system_error' } 
+          )
+        expect{ generator.screenshot }.to raise_error(ScreenshotMachine::Exceptions::SystemError)
+      end
+    end
   end
 end

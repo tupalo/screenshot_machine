@@ -12,6 +12,7 @@ module ScreenshotMachine
     class InvalidUrl < StandardError; end
     class InvalidKey < StandardError; end
     class NoCredits < StandardError; end
+    class SystemError < StandardError; end
   end
 
   class << self

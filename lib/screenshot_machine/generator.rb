@@ -22,6 +22,8 @@ module ScreenshotMachine
           raise Exceptions::InvalidKey, "ERROR: Invalid API KEY"
         when "no_credits"
           raise Exceptions::NoCredits,  "ERROR: No Credits for API"
+        when "system_error"
+          raise Exceptions::SystemError,  "ERROR: API System Error"
         end
         response.read
       end
