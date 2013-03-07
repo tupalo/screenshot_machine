@@ -34,7 +34,7 @@ ScreenshotMachine.configure do |config|
 end
 
 website_url = "http://google.com/?q=great+gem"
-sm = ScreenshotMachine::Generator.new(website_url)
+sm = ScreenshotMachine.new(website_url)
 # Returns a binary stream of the file
 sm.screenshot
 ```
@@ -58,17 +58,17 @@ end
 ```ruby
 # ScreenshotMachine::Exceptions::InvalidUrl
 # Raised when the website_url can not be resolved by ScreenshotMachine.com
-ScreenshotMachine::Generator.new("http://non-existing-example123.com").screenshot
+ScreenshotMachine.new("http://non-existing-example123.com").screenshot
 # ScreenshotMachine::Exceptions::InvalidUrl: WARNING: Invalid URL
 
 # ScreenshotMachine::Exceptions::InvalidKey
 # Raised when your API key is not set or invalid
-ScreenshotMachine::Generator.new("http://non-existing-example123.com").screenshot
+ScreenshotMachine.new("http://non-existing-example123.com").screenshot
 # ScreenshotMachine::Exceptions::InvalidKey: ERROR: Invalid API KEY
 
 # ScreenshotMachine::Exceptions::NoCredits
 # Raised when there are not sufficient credits in your ScreenshotMachine.com account.
-ScreenshotMachine::Generator.new("http://example.com").screenshot
+ScreenshotMachine.new("http://example.com").screenshot
 # ScreenshotMachine::Exceptions::NoCredits: ERROR: No Credits for API
 ```
 
