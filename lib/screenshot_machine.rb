@@ -1,13 +1,15 @@
-require "uri"
-require "open-uri"
-require "screenshot_machine/version"
-require "screenshot_machine/configuration"
+# frozen_string_literal: true
+
+require 'uri'
+require 'open-uri'
+require 'screenshot_machine/version'
+require 'screenshot_machine/configuration'
 
 module ScreenshotMachine
   extend Configuration
 
-  API_URL = "http://api.screenshotmachine.com/"
-  
+  API_URL = 'http://api.screenshotmachine.com/'
+
   module Exceptions
     class InvalidUrl < StandardError; end
     class InvalidKey < StandardError; end
@@ -19,13 +21,14 @@ module ScreenshotMachine
     # Alias for ScreenshotMachine::Generator.new
     #
     # @return [ScreenshotMachine::Generator]
-    def new(url, options={})
+    def new(url, options = {})
       ScreenshotMachine::Generator.new(url, options)
     end
 
     # Delegate to ScreenshotMachine::Generator
     def method_missing(method, *args, &block)
       return super unless new.respond_to?(method)
+
       new.send(method, *args, &block)
     end
 
@@ -36,4 +39,4 @@ module ScreenshotMachine
   end
 end
 
-require "screenshot_machine/generator"
+require 'screenshot_machine/generator'
